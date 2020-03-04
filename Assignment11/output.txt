@@ -1,0 +1,32 @@
+Character and Occurrence Chart
+   A occurred 2 times
+   F occurred 2 times
+   H occurred 1 times
+   L occurred 1 times
+   M occurred 2 times
+   a occurred 11 times
+   b occurred 5 times
+   c occurred 1 times
+   d occurred 6 times
+   e occurred 22 times
+   f occurred 2 times
+   ' occurred 1 times
+   g occurred 1 times
+   h occurred 3 times
+   i occurred 10 times
+   k occurred 1 times
+   l occurred 9 times
+   , occurred 4 times
+   m occurred 4 times
+   . occurred 5 times
+   n occurred 8 times
+   o occurred 2 times
+   p occurred 1 times
+   r occurred 10 times
+   s occurred 13 times
+   t occurred 7 times
+   u occurred 1 times
+   v occurred 1 times
+   w occurred 5 times
+   y occurred 4 times
+
