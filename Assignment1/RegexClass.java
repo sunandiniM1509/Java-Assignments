@@ -16,17 +16,20 @@ public class RegexClass {
                 // if we find a directory call the method with the subDirectory name and same regular expression
                 if (isFile.isDirectory())
                 {
-//                    if(isFile.list().length>-1) {
+                      // if(isFile.list().length>-1) {
                         checkForFiles(regex, isFile.getAbsolutePath());
-//                    }
-            }
+                      //  }
+                }
                 else {
+                    //If its a file we print the absolute path
                     String fileName = isFile.getName();
                     if (Pattern.matches(regex, fileName))
                         System.out.println(isFile.getAbsolutePath());
                 }
             }
-        } catch (Exception e) {
+        } 
+        //handle the empty file/directory's NullPointerException
+        catch (Exception e) {
             e.printStackTrace();
             System.out.println(e);
         }
@@ -36,6 +39,7 @@ public class RegexClass {
 
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Enter how many times to run :");
+                //This helps to take input recursively and stop after several times, in this way it avoid StackOverFlow
                 int times = scanner.nextInt();
                 while (times-- >0) {
                     // Assignments Directory
