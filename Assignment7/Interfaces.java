@@ -1,3 +1,8 @@
+/*
+*Created three interfaces, each with two methods also a interface which implements all the three
+*a class by implementing the new interface and also inheriting from a concrete class
+*and passing objects of this class and pass it to all methods
+*/
 interface interface1
 {
     void method1();
