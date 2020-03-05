@@ -1,6 +1,9 @@
 import java.util.*;
 
 class VampNumbers {
+    // Print first 100 Vampire Numbers
+    
+    //Function to return length of Number
     public static int digitLength(long n)
     {
         return Long.toString(n).length();
@@ -26,6 +29,7 @@ class VampNumbers {
     {
         List<Long> vampireNumbersList = new ArrayList<Long>();
         int j=1;
+        //ArrayList to store the results
         for(long i=1260; vampireNumbersList.size()<100; i++)
         {
             if((digitLength(i) % 2) == 0) 
