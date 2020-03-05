@@ -1,4 +1,6 @@
 package sunandini.assignment.singleton;
+/**Added a static method that takes String as parameter which return object of that class. 
+Added a non static method to print the String.*/
 
 public class Singelton
 {
