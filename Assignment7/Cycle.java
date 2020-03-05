@@ -1,4 +1,7 @@
-
+/**A Cycle class, with subclasses Unicycle, Bicycle and Tricycle.
+*Added a balance( ) method to Unicycle and Bicycle only
+*upcasting the instances of all three types and calling Balance()
+*Downcast the instances and calling balance( )*/
 class Cycle
 {
     Cycle()
