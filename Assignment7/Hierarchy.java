@@ -1,5 +1,7 @@
 import java.util.*;
 import java.io.*;
+//Creating an inheritance hierarchy, adding few common methods in Base class which are overriden in the derived classes
+
 abstract class Rodent
 {
     int speed;
@@ -74,11 +76,12 @@ public class Hierarchy
 {
     public static void main(String args[])
     {
+        //Array of object references of the Type Rodent
         Rodent rodentType[] = new Rodent[3];
         rodentType[0] = new Mouse();
         rodentType[0].eatingCapacity();
         rodentType[0].getSpeed();
-
+        // calling methods in each class through these references
         rodentType[1] = new Gerbil();
         rodentType[1].eatingCapacity();
         rodentType[1].getSpeed();
