@@ -15,5 +15,6 @@ public void printdata()
 	System.out.println("The value of x is: "+x);
 	System.out.println("The value of y is: "+y);
 }*/
+//Inorder to print the values we need to initialize them	
 }
 
