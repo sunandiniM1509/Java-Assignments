@@ -1,5 +1,5 @@
-//Create a Cycle interface, with implementations Unicycle, Bicycle and Tricycle. Create factories for each type of Cycle,
-// and code that uses these factories
+
+//Creating and implenting code that uses factories
 interface cycl
 {
     void getWheels();
@@ -16,12 +16,15 @@ class Unicycl implements cycl
         this.wheels = 1;
         this.balance = true;
     }
+    @Override
     public void getWheels()
     {
         System.out.println("A unicycle has "+wheels+" wheel");
     }
-    public void setBalance(){ System.out.println("It is "+balance+" that I am balanced");
-
+    @Override
+    public void setBalance()
+    { 
+    System.out.println("It is "+balance+" that I am balanced");
     }
 }
 
@@ -34,11 +37,11 @@ class Bicycl implements cycl {
         this.wheels = 2;
         this.balance = true;
     }
-
+    @Override
     public void getWheels() {
         System.out.println("A bicycle has " + wheels + " wheels");
     }
-
+    @Override
     public void setBalance() {
         System.out.println("It is " + balance + " that I am balanced");
     }
@@ -52,11 +55,11 @@ class Tricycl implements cycl {
         this.wheels = 3;
         this.balance = false;
     }
-
+    @Override
     public void getWheels() {
         System.out.println("A tricycle has " + wheels + " wheels");
     }
-
+    @Override
     public void setBalance() {
         System.out.println("It is " + balance + " that I am balanced");
     }
