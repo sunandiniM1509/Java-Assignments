@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.regex.Pattern;
 public class Ping
 {
+    //function that will ping any host ( given as input ) and computes the median of the time taken to ping
     public static void storePingResponse(String command) throws IOException {
             Process process = Runtime.getRuntime().exec(command);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
