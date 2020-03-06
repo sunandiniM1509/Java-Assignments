@@ -1,8 +1,10 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.*;
-
-
+/**
+*Using java.util.regex.Pattern as a resource, a function is written to 
+*check if a sentence begins with a capital letter and ends with a period.
+*/
 class RegexCaps
 {
     public static void main(String args[])throws IOException
