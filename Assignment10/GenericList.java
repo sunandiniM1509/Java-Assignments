@@ -1,3 +1,8 @@
+/**
+*Creating node through a generic Node class, a singly linked list class SList without implementing the List interface.
+*and a SListIterator to iterate over the list and to insert and remove elements from an SList is through SListIterator 
+using deleteData and insertData methods.
+*/
 class Node<T>
 {
     T data;
@@ -37,6 +42,7 @@ class SListIterator<T>
     {
         head = t;
     }
+    //Intersting node
     public void insertData(T data)
     {
         if(head==null)
@@ -50,7 +56,7 @@ class SListIterator<T>
             tail = tail.next;
         }
     }
-
+   // Deleting node
     public void deleteData(T data)
     {
         if(head==null)
