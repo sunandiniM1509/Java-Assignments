@@ -1,7 +1,11 @@
 import java.util.*;
 import java.io.*;
 import java.util.regex.Pattern;
-
+/**
+*A program to search through the home directory and look for files that match given regular expression. 
+*It takes inputs repeatedly based on number of times to search and prints out the full absolute path 
+*of the matching files found and implemented Exception Handling to handle null pointer Exception.
+*/
 public class RegexClass {
 
     public static void checkForFiles(String regex, String filePath) {
