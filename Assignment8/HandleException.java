@@ -1,4 +1,8 @@
 
+/**
+*This program creates three custom Exceptions and a Handler class to throw all three. 
+*A finally block is added to verify if the clause is executed.
+*/
 class UserException1 extends Exception
 {
     public UserException1(String s)
