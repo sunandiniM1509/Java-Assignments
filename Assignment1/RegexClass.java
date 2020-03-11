@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-public class untitled{
+public class RegexClass{
     /**
      *A program to search through the home directory and look for files that match given regular expression.
      *It takes inputs repeatedly based on number of times to search and prints out the full absolute path
