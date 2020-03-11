@@ -8,7 +8,7 @@ public class Main {
 
 		Data data = new Data();
 		data.printdata();
-                //d.print() does not work as local values need to be Initialized
+                //data.print() does not work as local values need to be Initialized
 		Singelton singletonObj = Singelton.initString("Duke!");
 		singletonObj.print();
 	}
