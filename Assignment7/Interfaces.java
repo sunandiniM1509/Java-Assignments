@@ -1,3 +1,5 @@
+import java.util.logging.Logger;
+
 /**
  *Three interfaces, each with two methods are created
  */
@@ -27,10 +29,11 @@ interface interface4 extends interface1,interface2,interface3
 
 class ConcreteClass
 {
-    String s="Sunandini";
+    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    String sname="Sunandini";
     void display()
     {
-        System.out.println(s);
+        logger.info(sname);
     }
 }
 /**
@@ -41,37 +44,37 @@ class ChildOfConcrete extends ConcreteClass implements interface4
 {
     @Override
     public void method1() {
-
+        logger.info("Overriding method1 of interface1");
     }
 
     @Override
     public void method2() {
-
+        logger.info("Overriding method2 of interface1");
     }
 
     @Override
     public void method3() {
-
+        logger.info("Overriding method3 of interface2");
     }
 
     @Override
     public void method4() {
-
+        logger.info("Overriding method4 of interface2");
     }
 
     @Override
     public void method5() {
-
+        logger.info("Overriding method5 of interface3");
     }
 
     @Override
     public void method6() {
-
+        logger.info("Overriding method6 of interface3");
     }
 
     @Override
     public void method7() {
-
+        logger.info("Overriding method7 of interface4");
     }
 }
 class Interfaces
