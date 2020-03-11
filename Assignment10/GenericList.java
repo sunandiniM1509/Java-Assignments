@@ -1,13 +1,11 @@
 /**
-*Creating node through a generic Node class, a singly linked list class SList without implementing the List interface.
-*and a SListIterator to iterate over the list and to insert and remove elements from an SList is through SListIterator 
-using deleteData and insertData methods.
-*/
+ *Creating node through a generic Node class, a singly linked list class SList without implementing the List interface.
+ *and a SListIterator to iterate over the list.
+ */
 class Node<T>
 {
     T data;
     Node<T> next;
-
     Node(T data)
     {
         this.data = data;
@@ -31,8 +29,6 @@ class SList<T>
         return new SListIterator<T>(head);
     }
 }
-
-
 class SListIterator<T>
 {
     Node<T> head;
@@ -42,7 +38,10 @@ class SListIterator<T>
     {
         head = t;
     }
-    //Intersting node
+    /**
+     *Intersting node into SList
+     *@param T generic type to hold data to be interted
+     */
     public void insertData(T data)
     {
         if(head==null)
@@ -56,7 +55,10 @@ class SListIterator<T>
             tail = tail.next;
         }
     }
-   // Deleting node
+    /**
+     *Deleting node from SList
+     *@param T generic type to delete the node containing the data
+     */
     public void deleteData(T data)
     {
         if(head==null)
@@ -89,7 +91,9 @@ class SListIterator<T>
         else
             temp.next = temp.next.next;
     }
-
+    /**
+     *Method to print the data of each node in the SList
+     */
     public void displaySList()
     {
         if(head==null)
@@ -98,16 +102,15 @@ class SListIterator<T>
             return;
         }
         Node<T> temp = head;
-        System.out.println("The list contains :");
+        System.out.print("The list contains : [");
         while(temp.next!=null)
         {
             System.out.print(temp.data+", ");
             temp = temp.next;
         }
-        System.out.println(temp.data);
+        System.out.println(temp.data+"]");
     }
 }
-
 class GenericList
 {
     public static void main(String args[])
