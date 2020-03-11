@@ -1,8 +1,6 @@
-/*
-*Created three interfaces, each with two methods also a interface which implements all the three
-*a class by implementing the new interface and also inheriting from a concrete class
-*and passing objects of this class and pass it to all methods
-*/
+/**
+ *Three interfaces, each with two methods are created
+ */
 interface interface1
 {
     void method1();
@@ -19,6 +17,9 @@ interface interface3
     void method6();
 }
 
+/**
+ *An interface which implements all the three interfaces
+ */
 interface interface4 extends interface1,interface2,interface3
 {
     void method7();
@@ -32,7 +33,10 @@ class ConcreteClass
         System.out.println(s);
     }
 }
-
+/**
+*class which implements the new interface and also extends from a concrete class is generated
+ *and passing objects of this class and pass it to all methods
+ */
 class ChildOfConcrete extends ConcreteClass implements interface4
 {
     @Override
@@ -70,20 +74,18 @@ class ChildOfConcrete extends ConcreteClass implements interface4
 
     }
 }
-
 class Interfaces
-{   
-    public static void m1(interface1 obj){ obj.method1(); }
-    public static void m2(interface2 obj){ obj.method3(); }
-    public static void m3(interface3 obj){ obj.method5(); }
-    public static void m4(interface4 obj){ obj.method6(); }
+{
+    public static void generateMethod1(interface1 obj){ obj.method1(); }
+    public static void generateMethod2(interface2 obj){ obj.method3(); }
+    public static void generateMethod3(interface3 obj){ obj.method5(); }
+    public static void generateMethod4(interface4 obj){ obj.method6(); }
     public static void main(String args[])
     {
         ChildOfConcrete object = new ChildOfConcrete();
-        m1(object);
-        m2(object);
-        m3(object);
-        m4(object);
+        generateMethod1(object);
+        generateMethod2(object);
+        generateMethod3(object);
+        generateMethod4(object);
     }
 }
-
