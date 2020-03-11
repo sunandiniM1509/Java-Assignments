@@ -11,9 +11,6 @@ public class RegexClass{
      * @param regex String that holds the regular expression to match
      * @param filePath String to search for files in that filepath directory
      * @throws NullPointerException if an empty file is found
-     * @param file variable to hold a file
-     * @param allFiles is an array of files that are present in directory
-     * @param fileName variable to hold name of the file
      */
     public static void checkForFiles(String regex, String filePath) {
         try {
