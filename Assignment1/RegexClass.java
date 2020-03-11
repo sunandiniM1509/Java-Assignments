@@ -40,20 +40,16 @@ public class RegexClass{
     }
     public static void main(String[] args)
     {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the regular expression :");
-        String regex = scanner.nextLine();
+        String regex = scanner.nextLine();// for example : ".*/*.java"
         String filepath ="/home";
         System.out.println("Enter how many times to run :");
         //This helps to take input recursively and stop after several times, in this way it avoid StackOverFlow
         int times = scanner.nextInt();
         while (times-- >0) {
-            // Assignments Directory
-            // findMatchingFiles(".*/*.java","/home/sunandini/JavaAssignments");
-
+            //check for files in "filepath" directory
             checkForFiles(regex, filepath);
-
         }
     }
 
