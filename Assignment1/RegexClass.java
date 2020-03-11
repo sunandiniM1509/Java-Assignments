@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 public class RegexClass{
+    private static Logger logger = Logger.getLogger(RegexClass.class.getName());
     /**
      *A program to search through the home directory and look for files that match given regular expression.
      *It takes inputs repeatedly based on number of times to search and prints out the full absolute path
@@ -14,7 +15,6 @@ public class RegexClass{
      * @param allFiles is an array of files that are present in directory
      * @param fileName variable to hold name of the file
      */
-    private static Logger logger = Logger.getLogger(untitled.class.getName());
     public static void checkForFiles(String regex, String filePath) {
         try {
             File file = new File(filePath);
