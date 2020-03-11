@@ -1,110 +1,209 @@
+import java.util.*;
+import java.io.*;
+/**
+*Creating an inheritance hierarchy, adding few common methods in Base class which are overriden in the derived classes
+*/
+abstract class Rodent
+{
+    int speed;
+    Rodent()
+    {
+        System.out.println("Hi, we are rodents, we are the tiny animals ");
+    }
+    /**
+    *Method to provide what and how much the rodent eats
+    */
+    abstract public void eatingCapacity();
+    /**
+    *Method to provide the speed of the rodent
+    */
+    abstract public void getSpeed();
+    
+}
+class Mouse extends Rodent
+{
+    Mouse()
+    {
+        System.out.println("I am a Mouse");
+        speed = 30;
+    }
+    @Override
+    public void eatingCapacity()
+    {
+        System.out.println("I eat all.");
+    }
+    @Override
+    public void getSpeed()
+    {
+        System.out.println("I'm healthy, so I run faster at a speed of "+speed+" kmph");
+        System.out.println();
+    }
+}
+class Gerbil extends Rodent
+{
+    Gerbil()
+    {
+        System.out.println("I am a Gerbil");
+        speed = 15;
+    }
+    @Override
+    public void eatingCapacity()
+    {
+        System.out.println("I only eat leaves");
+    }
+    @Override
+    public void getSpeed()
+    {
+        System.out.println("I'm run slow at a speed of "+speed+" kmph");
+        System.out.println();
+    }
+
+}
+
+class Hamster extends Rodent
+{
+    Hamster()
+    {
+        System.out.println("I am a Hamster");
+        speed = 3;
+    }
+    @Override
+    public void eatingCapacity()
+    {
+        System.out.println("I eat and sleep");
+    }
+    @Override
+    public void getSpeed()
+    {
+        System.out.println("I am very slow, I walk at a speed of "+speed+" kmph");
+        System.out.println();
+    }
+
+}
+public class Hierarchy
+{
+    public static void main(String args[])
+    {
+        Rodent rodentType[] = new Rodent[3];
+        rodentType[0] = new Mouse();
+        rodentType[0].eatingCapacity();
+        rodentType[0].getSpeed();
+
+        rodentType[1] = new Gerbil();import java.util.*;
+import java.io.*;
 import java.util.logging.Logger;
 
 /**
- *A Cycl interface, with implementations Unicycl, Bicycl and Tricycl
- * factories for each type of Cycle are generated
+ *Creating an inheritance hierarchy, adding few common methods in Base class which are overriden in the derived classes
  */
-interface cycl
+abstract class Rodent
 {
     static Logger logger = Logger.getLogger(RegexClass.class.getName());
-     /**
-     *Method to know how many wheels the cycl has
-     */
-    void getWheels();
+    int speed;
+    Rodent()
+    {
+        logger.info("Hi, we are rodents, we are the tiny animals ");
+    }
     /**
-     *Method to know if the cycl is balanced
+     *Method to provide what and how much the rodent eats
      */
-    void setBalance();
-}
+    abstract public void eatingCapacity();
+    /**
+     *Method to provide the speed of the rodent
+     */
+    abstract public void getSpeed();
 
-class Unicycl implements cycl
+}
+class Mouse extends Rodent
 {
-    int wheels;
-    boolean balance;
-    Unicycl()
+    Mouse()
     {
-        logger.info("It is a unicycle");
-        this.wheels = 1;
-        this.balance = true;
+        logger.info("I am a Mouse");
+        speed = 30;
     }
     @Override
-    public void getWheels()
+    public void eatingCapacity()
     {
-        logger.info("A unicycle has "+wheels+" wheel");
+        logger.info("I eat all.");
     }
     @Override
-    public void setBalance()
+    public void getSpeed()
     {
-        logger.info("It is "+balance+" that I am balanced");
+        logger.info("I'm healthy, so I run faster at a speed of "+speed+" kmph");
+        logger.info("----------------------------------------------------------");
     }
 }
-
-class Bicycl implements cycl {
-    int wheels;
-    boolean balance;
-
-    Bicycl() {
-        logger.info("It is a bicycle");
-        this.wheels = 2;
-        this.balance = true;
-    }
-    @Override
-    public void getWheels()
-    {
-        logger.info("A bicycle has " + wheels + " wheels");
-    }
-    @Override
-    public void setBalance()
-    {
-        logger.info("It is " + balance + " that I am balanced");
-    }
-}
-class Tricycl implements cycl {
-    int wheels;
-    boolean balance;
-
-    Tricycl() {
-        logger.info("It is a tricycle\n");
-        this.wheels = 3;
-        this.balance = false;
-    }
-    @Override
-    public void getWheels()
-    {
-        logger.info("A tricycle has " + wheels + " wheels");
-    }
-    @Override
-    public void setBalance()
-    {
-        logger.info("It is " + balance + " that I am balanced");
-    }
-}
-class CycleFactory
+class Gerbil extends Rodent
 {
-    public static cycl callUnicycle()
+    Gerbil()
     {
-        return new Unicycl();
+        logger.info("I am a Gerbil");
+        speed = 15;
     }
-    public static cycl callBicycle()
+    @Override
+    public void eatingCapacity()
     {
-        return new Bicycl();
+        logger.info("I only eat leaves");
     }
-    public static cycl callTricycle()
+    @Override
+    public void getSpeed()
     {
-        return new Tricycl();
+        logger.info("I'm run slow at a speed of "+speed+" kmph");
+        logger.info("----------------------------------------------------------");
     }
 
 }
-class Factory
+
+class Hamster extends Rodent
 {
-    public static void main(String []args)
+    Hamster()
     {
-        cycl ucycle = CycleFactory.callUnicycle();
-        cycl bcycle = CycleFactory.callBicycle();
-        cycl tcycle = CycleFactory.callTricycle();
+        logger.info("I am a Hamster");
+        speed = 3;
+    }
+    @Override
+    public void eatingCapacity()
+    {
+        logger.info("I eat and sleep");
+    }
+    @Override
+    public void getSpeed()
+    {
+        logger.info("I am very slow, I walk at a speed of "+speed+" kmph");
+        logger.info("----------------------------------------------------------");
+    }
 
-        ucycle.getWheels();
-        bcycle.getWheels();
-        tcycle.getWheels();
+}
+public class Hierarchy
+{
+    public static void main(String args[])
+    {
+        Rodent rodentType[] = new Rodent[3];
+        rodentType[0] = new Mouse();
+        rodentType[0].eatingCapacity();
+        rodentType[0].getSpeed();
+
+        rodentType[1] = new Gerbil();
+        rodentType[1].eatingCapacity();
+        rodentType[1].getSpeed();
+
+        rodentType[2] = new Hamster();
+        rodentType[2].eatingCapacity();
+        rodentType[2].getSpeed();
+
     }
 }
+
+
+
+        rodentType[1].eatingCapacity();
+        rodentType[1].getSpeed();
+
+        rodentType[2] = new Hamster();
+        rodentType[2].eatingCapacity();
+        rodentType[2].getSpeed();
+
+    }
+}
+
+
