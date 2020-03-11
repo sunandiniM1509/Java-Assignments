@@ -5,31 +5,31 @@
 */
 class UserException1 extends Exception
 {
-    public UserException1(String s)
+    public UserException1(String string1)
     {
-        System.out.println(s);
+        System.out.println(string1);
     }
 }
 
 class UserException2 extends Exception
 {
-    public UserException2(String s)
+    public UserException2(String string2)
     {
-        System.out.println(s);
+        System.out.println(string2);
     }
 }
 
 class UserException3 extends Exception
 {
-    public UserException3(String s)
+    public UserException3(String string3)
     {
-        System.out.println(s);
+        System.out.println(string3);
     }
 }
 class Handler {
-    public static void handlingThrown(int x) {
+    public static void handlingThrown(int xvalue) {
         try {
-            switch (x) {
+            switch (xvalue) {
                 case 1:
                     throw new UserException1("User Defined Exception 1");
                 case 2:
@@ -37,7 +37,7 @@ class Handler {
                 case 3:
                     throw new UserException3("User Defined Exception 3");
             }
-        } catch (Exception e) {
+        } catch (Exception exception) {
             System.out.println("User Defined Exception caught");
         } finally {
             System.out.println("Finally block is executed");
