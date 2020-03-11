@@ -1,3 +1,6 @@
+/**
+*creating objects to attach to the array of references
+*/
 class Attach
 {
     String str;
@@ -15,7 +18,6 @@ class Attacher
     {
         Attach attachobjs[]  = new Attach[11];
         // The initialization messages from the constructor calls are not printed.
-       
         for(int i=1;i<11;i++)
             //The initialization messages are printed.
             attachobjs[i] = new Attach(String.valueOf(i));
