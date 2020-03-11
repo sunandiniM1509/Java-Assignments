@@ -6,11 +6,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Data d = new Data();
-		d.printdata();
+		Data data = new Data();
+		data.printdata();
                 //d.print() does not work as local values need to be Initialized
-		Singelton s = Singelton.initString("Duke!");
-		s.print();
+		Singelton singletonObj = Singelton.initString("Duke!");
+		singletonObj.print();
 	}
  }
 
