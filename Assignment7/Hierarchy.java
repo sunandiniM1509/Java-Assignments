@@ -1,96 +1,110 @@
-import java.util.*;
-import java.io.*;
-//Creating an inheritance hierarchy, adding few common methods in Base class which are overriden in the derived classes
+import java.util.logging.Logger;
 
-abstract class Rodent
+/**
+ *A Cycl interface, with implementations Unicycl, Bicycl and Tricycl
+ * factories for each type of Cycle are generated
+ */
+interface cycl
 {
-    int speed;
-    Rodent()
-    {
-        System.out.println("Hi, we are rodents, we are the tiny animals ");
-    }
-    abstract public void getSpeed();
-    abstract public void eatingCapacity();
-}
-class Mouse extends Rodent
-{
-    Mouse()
-    {
-        System.out.println("I am a Mouse");
-        speed = 30;
-    }
-    @Override
-    public void eatingCapacity()
-    {
-        System.out.println("I eat all.");
-    }
-    @Override
-    public void getSpeed()
-    {
-        System.out.println("I'm healthy, so I run faster at a speed of "+speed+" kmph");
-        System.out.println();
-    }
-}
-class Gerbil extends Rodent
-{
-    Gerbil()
-    {
-        System.out.println("I am a Gerbil");
-        speed = 15;
-    }
-    @Override
-    public void eatingCapacity()
-    {
-        System.out.println("I only eat leaves");
-    } 
-    @Override
-    public void getSpeed()
-    {
-        System.out.println("I'm run slow at a speed of "+speed+" kmph");
-        System.out.println();
-    }
-
+    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+     /**
+     *Method to know how many wheels the cycl has
+     */
+    void getWheels();
+    /**
+     *Method to know if the cycl is balanced
+     */
+    void setBalance();
 }
 
-class Hamster extends Rodent
+class Unicycl implements cycl
 {
-    Hamster()
+    int wheels;
+    boolean balance;
+    Unicycl()
     {
-        System.out.println("I am a Hamster");
-        speed = 3;
+        logger.info("It is a unicycle");
+        this.wheels = 1;
+        this.balance = true;
     }
     @Override
-    public void eatingCapacity()
+    public void getWheels()
     {
-        System.out.println("I eat and sleep");
+        logger.info("A unicycle has "+wheels+" wheel");
     }
     @Override
-    public void getSpeed()
+    public void setBalance()
     {
-        System.out.println("I am very slow, I walk at a speed of "+speed+" kmph");
-        System.out.println();
-    }
-
-}
-public class Hierarchy
-{
-    public static void main(String args[])
-    {
-        //Array of object references of the Type Rodent
-        Rodent rodentType[] = new Rodent[3];
-        rodentType[0] = new Mouse();
-        rodentType[0].eatingCapacity();
-        rodentType[0].getSpeed();
-        // calling methods in each class through these references
-        rodentType[1] = new Gerbil();
-        rodentType[1].eatingCapacity();
-        rodentType[1].getSpeed();
-
-        rodentType[2] = new Hamster();
-        rodentType[2].eatingCapacity();
-        rodentType[2].getSpeed();
-
+        logger.info("It is "+balance+" that I am balanced");
     }
 }
 
+class Bicycl implements cycl {
+    int wheels;
+    boolean balance;
 
+    Bicycl() {
+        logger.info("It is a bicycle");
+        this.wheels = 2;
+        this.balance = true;
+    }
+    @Override
+    public void getWheels()
+    {
+        logger.info("A bicycle has " + wheels + " wheels");
+    }
+    @Override
+    public void setBalance()
+    {
+        logger.info("It is " + balance + " that I am balanced");
+    }
+}
+class Tricycl implements cycl {
+    int wheels;
+    boolean balance;
+
+    Tricycl() {
+        logger.info("It is a tricycle\n");
+        this.wheels = 3;
+        this.balance = false;
+    }
+    @Override
+    public void getWheels()
+    {
+        logger.info("A tricycle has " + wheels + " wheels");
+    }
+    @Override
+    public void setBalance()
+    {
+        logger.info("It is " + balance + " that I am balanced");
+    }
+}
+class CycleFactory
+{
+    public static cycl callUnicycle()
+    {
+        return new Unicycl();
+    }
+    public static cycl callBicycle()
+    {
+        return new Bicycl();
+    }
+    public static cycl callTricycle()
+    {
+        return new Tricycl();
+    }
+
+}
+class Factory
+{
+    public static void main(String []args)
+    {
+        cycl ucycle = CycleFactory.callUnicycle();
+        cycl bcycle = CycleFactory.callBicycle();
+        cycl tcycle = CycleFactory.callTricycle();
+
+        ucycle.getWheels();
+        bcycle.getWheels();
+        tcycle.getWheels();
+    }
+}
