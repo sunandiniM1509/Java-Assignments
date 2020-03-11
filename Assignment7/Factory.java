@@ -1,8 +1,16 @@
-
-//Creating and implenting code that uses factories
+/**
+ *A Cycl interface, with implementations Unicycl, Bicycl and Tricycl
+ * factories for each type of Cycl are generated
+ */
 interface cycl
 {
+     /**
+     *Method to know how many wheels the cycl has
+     */
     void getWheels();
+    /**
+     *Method to know if the cycl is balanced
+     */
     void setBalance();
 }
 
@@ -23,8 +31,8 @@ class Unicycl implements cycl
     }
     @Override
     public void setBalance()
-    { 
-    System.out.println("It is "+balance+" that I am balanced");
+    {
+        System.out.println("It is "+balance+" that I am balanced");
     }
 }
 
@@ -66,7 +74,6 @@ class Tricycl implements cycl {
 }
 class CycleFactory
 {
-    //Factory Methods
     public static cycl callUnicycle()
     {
         return new Unicycl();
@@ -81,7 +88,6 @@ class CycleFactory
     }
 
 }
-
 class Factory
 {
     public static void main(String []args)
@@ -95,4 +101,3 @@ class Factory
         tcycle.getWheels();
     }
 }
-
