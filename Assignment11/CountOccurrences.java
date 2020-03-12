@@ -17,7 +17,6 @@ class CountOccurrences
             FileReader freader = new FileReader(file);
             while ((fpointer = freader.read()) != -1) {
                 char ch = (char) fpointer;
-                ch=Character.toLowerCase(ch);
                 if (ch != ' ' && ch != '\t' && ch != '\n') {
                     if (!CharacterCount.containsKey(ch))
                         CharacterCount.put(ch, 1);
