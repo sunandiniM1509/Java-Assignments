@@ -2,9 +2,9 @@ Java-Assignments
 
 To run :
 
-javac <filename>.java
+javac filename.java
 
-java <filename>
+java filename
 
 Ex    : 
 
