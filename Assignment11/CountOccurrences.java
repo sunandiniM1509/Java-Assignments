@@ -1,24 +1,23 @@
 import java.io.*;
 import java.util.*;
-
+import java.util.logging.Logger;
 /**
-*Accepting a text file (input.txt) as an input through command line argument and this program counts the 
-*occurrence of all the different characters and saves the result in a text file (output.txt).
-*/
+ *Java program that accepts a text file (input.txt) as an input through command line arguments and counts the
+ *occurrence of all the different characters and saves the result in a text file (output.txt).
+ */
 class CountOccurrences
 {
-    public static void main(String args[]) throws Exception
+    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    public static void main(String args[]) 
     {
         try {
             File file = new File(args[0]);
             int fpointer = 0;
-            //A HashMap to store each character and count of its occurrence.
             HashMap<Character, Integer> CharacterCount = new HashMap<Character, Integer>();
             FileReader freader = new FileReader(file);
-            //traverse through the Map and check for characters
-            //if file pointer == -1 --> not a valid index, end of the file.
             while ((fpointer = freader.read()) != -1) {
                 char ch = (char) fpointer;
+                ch=Character.toLowerCase(ch);
                 if (ch != ' ' && ch != '\t' && ch != '\n') {
                     if (!CharacterCount.containsKey(ch))
                         CharacterCount.put(ch, 1);
@@ -26,20 +25,23 @@ class CountOccurrences
                         CharacterCount.put(ch, (int) CharacterCount.get(ch) + 1);
                 }
             }
-
             FileWriter fwriter = new FileWriter("output.txt");
             PrintWriter pwriter = new PrintWriter(fwriter);
             pwriter.printf("Character and Occurrence Chart\n");
-            //System.out.println("");
             for (Map.Entry<Character, Integer> entry : CharacterCount.entrySet())
                 pwriter.printf("   " + (char) entry.getKey() + " occurred " + (int) entry.getValue() + " times\n");
-            System.out.println("Result is successfully stored in output.txt file");
+            logger.info("Result is successfully stored in output.txt file");
             pwriter.close();
         }
-        catch (Exception e)
+        catch (FileNotFoundException exception)
         {
-            System.out.println("File not found Exception: e");
-            e.printStackTrace();
+            logger.info("FileNotFoundException is caught!");
+            exception.printStackTrace();
+        }
+        catch (IOException exceptionIO)
+        {
+            logger.info("IOException is caught!");
+            exceptionIO.printStackTrace();
         }
     }
 }
