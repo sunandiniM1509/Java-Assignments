@@ -29,7 +29,7 @@ interface interface4 extends interface1,interface2,interface3
 
 class ConcreteClass
 {
-    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    static Logger logger = Logger.getLogger(Interfaces.class.getName());
     String sname="Sunandini";
     void display()
     {
