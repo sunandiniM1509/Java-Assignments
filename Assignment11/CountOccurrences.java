@@ -7,7 +7,7 @@ import java.util.logging.Logger;
  */
 class CountOccurrences
 {
-    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    static Logger logger = Logger.getLogger(CountOccurrences.class.getName());
     public static void main(String args[]) 
     {
         try {
