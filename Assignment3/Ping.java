@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 public class Ping
 {
-    private static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    private static Logger logger = Logger.getLogger(Ping.class.getName());
     /**
      * Java function that will ping any host and computes the median of the time taken to ping.
      * The system ping utility is used.
