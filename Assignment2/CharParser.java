@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.logging.Logger;
 
 public class CharParser {
-    private static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    private static Logger logger = Logger.getLogger(CharParser.class.getName());
     /**
      *A java function to check if the input string contains all the letters of the alphabet a-z (case-insensitive)
      *@param input String to hold user provided input
