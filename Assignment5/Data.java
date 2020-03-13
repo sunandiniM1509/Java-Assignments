@@ -1,6 +1,6 @@
 package sunandini.assignment.data;
 public class Data {
-private static Logger logger = Logger.getLogger(RegexClass.class.getName());
+private static Logger logger = Logger.getLogger(Data.class.getName());
 private int varInt;
 private char varChar;
 /**
