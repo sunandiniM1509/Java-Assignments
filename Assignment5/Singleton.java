@@ -1,7 +1,7 @@
 package sunandini.assignment.singleton;
 public class Singelton
 {
-  private static Logger logger = Logger.getLogger(RegexClass.class.getName());
+  private static Logger logger = Logger.getLogger(Singleton.class.getName());
   public String str;
 /**
 *Adding a static method that takes String as parameter which return object of that class. 
