@@ -3,7 +3,7 @@
 */
 class Initializer
 {
-    private static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    private static Logger logger = Logger.getLogger(Helper.class.getName());
     String string1,string2;
     Initializer()
     {
