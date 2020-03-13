@@ -5,7 +5,7 @@ import java.util.logging.Logger;
  *A java program to print first 100 vampire numbers.
  */
 class VampNumbers {
-    private static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    private static Logger logger = Logger.getLogger(VampNumbers.class.getName());
     /**
      * A function used to check the length of the number passed
      * @param n long to hold the number
