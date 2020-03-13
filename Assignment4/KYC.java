@@ -39,7 +39,7 @@ class KYC {
             if(joiningDate.equals(currentDate))
                 printDate(joiningDate,joiningDate.plusDays(30));
             else if(joiningDate.isAfter(currentDate))
-                System.out.println("No ranges");
+                System.out.println("No valid range available");
             else 
             {
                 int joiningYear = getYear(input[0]);
