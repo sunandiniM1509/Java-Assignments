@@ -1,66 +1,56 @@
-import java.io.*;
-import java.util.*;
-import java.text.SimpleDateFormat;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-class KYC
-{
-    /**
+class KYC {
+     /**
      * Taking the signup date and the current date as Input in the form of dd-mm-yyyy , this program provides the allowable date range for
      * the form date in the format dd-mm-yyyy.
      */
-    public static void setCalendarDate(Calendar calendar,int date,int month,int year)
+    public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+    public static LocalDate getDate(String date)
     {
-        calendar.set(Calendar.DATE,date);
-        calendar.set(Calendar.MONTH,month);
-        calendar.set(Calendar.YEAR,year);
+        return LocalDate.parse(date,dtf);
     }
-    public static int[] getCalendarDate(String str)
+
+    public static int getYear(String date)
     {
-        StringTokenizer stokenizer = new StringTokenizer(str,"-");
-        int DateStrings[]= new int[3];
-        int i=0;
-        while(stokenizer.hasMoreTokens())
-            DateStrings[i++] = Integer.parseInt(stokenizer.nextToken());
-        return DateStrings;
+        return Integer.parseInt(date.substring(6));
     }
-    public static void main(String args[])throws IOException
+
+    public static void printDate(LocalDate d1,LocalDate d2)
     {
-        BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
-        SimpleDateFormat dformater = new SimpleDateFormat("dd-MM-yyyy");
-        int t = Integer.parseInt(breader.readLine());// number of test cases
-        while(t>0)
+        System.out.println(dtf.format(d1)+" "+dtf.format(d2));
+    }
+    public static void main(String args[]) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int times = Integer.parseInt(br.readLine());
+
+        while(times>0)
         {
-            t--;
-            String input[] = breader.readLine().split(" ");
-
-            int joiningDate[] = getCalendarDate(input[0]);
-            int currentDate[] = getCalendarDate(input[1]);
-            
-            Calendar c1 = Calendar.getInstance();
-            setCalendarDate(c1, joiningDate[0], joiningDate[1]-1, joiningDate[2]);
-
-            Calendar c2 = Calendar.getInstance();
-            setCalendarDate(c2,currentDate[0],currentDate[1]-1,currentDate[2]);
-
-            // if joining date is after current date
-            if(c1.getTime().after(c2.getTime()))
+            times--;
+            String input[] = br.readLine().split(" ");
+            LocalDate joiningDate = getDate(input[0]);
+            LocalDate currentDate = getDate(input[1]);
+            if(joiningDate.equals(currentDate))
+                printDate(joiningDate,joiningDate.plusDays(30));
+            else if(joiningDate.isAfter(currentDate))
+                System.out.println("No ranges");
+            else 
             {
-                System.out.println("\nEnter a valid range");
-                continue;
+                int joiningYear = getYear(input[0]);
+                int currentYear = getYear(input[1]);
+                joiningDate = joiningDate.plusYears(currentYear-joiningYear);
+                if(joiningDate.plusDays(30).isAfter(currentDate))
+                    printDate(joiningDate.minusDays(30), currentDate);
+
+                else
+                    printDate(joiningDate.minusDays(30), joiningDate.plusDays(30));
             }
-            c1.set(Calendar.YEAR, currentDate[2]);
-            Date presentDate = c2.getTime();
-
-            c1.add(Calendar.DATE,-30);
-            System.out.print("\n"+dformater.format(c1.getTime()));
-
-            c1.add(Calendar.DATE,60);
-
-            if(c1.getTime().after(presentDate))
-                System.out.println(" "+dformater.format(presentDate));
-            else
-                System.out.println(" "+dformater.format(c1.getTime()));
         }
     }
-
 }
