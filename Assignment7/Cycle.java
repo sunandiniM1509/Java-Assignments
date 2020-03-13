@@ -7,7 +7,7 @@ import java.util.logging.Logger;
  */
 class Cycle
 {
-    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    static Logger logger = Logger.getLogger(Cycle.class.getName());
     Cycle()
     {
         logger.info("I am a cycle class");
