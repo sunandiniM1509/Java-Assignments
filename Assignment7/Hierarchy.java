@@ -98,7 +98,7 @@ import java.util.logging.Logger;
  */
 abstract class Rodent
 {
-    static Logger logger = Logger.getLogger(RegexClass.class.getName());
+    static Logger logger = Logger.getLogger(Rodent.class.getName());
     int speed;
     Rodent()
     {
