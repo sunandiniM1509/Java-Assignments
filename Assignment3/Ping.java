@@ -33,14 +33,14 @@ public class Ping
             else
                 logger.info("Median of the time take to ping = " + pingtime.get(length / 2) + " ms");
         }
-        catch (IndexOutOfBoundsException exception)
+        catch (IndexOutOfBoundsException indexoutofboundsexception)
         {
-            exception.printStackTrace();
+            indexoutofboundsexception.printStackTrace();
             logger.info("Caught IndexOutOfBounds exception");
         }
-        catch (IOException exception2)
+        catch (IOException ioexception)
         {
-            exception2.printStackTrace();
+            ioexception.printStackTrace();
             logger.info("Caught IOException");
         }
     }
