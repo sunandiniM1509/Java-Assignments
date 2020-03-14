@@ -6,6 +6,10 @@ public class CharParser {
     /**
      *A java function to check if the input string contains all the letters of the alphabet a-z (case-insensitive)
      *@param input String to hold user provided input
+     *
+     *The algorithm has Linear Time Complexity of O(n) where n is the length of the string.
+     *Space Complexity is O(1) as a constant array of size 26 (count lower case alphabets ) is
+     *required to store occurrences of a-z.
      */
     static boolean checkCharacter(String input)
     {
@@ -32,8 +36,4 @@ public class CharParser {
             logger.info("No, The given input String does not contain all the {a-z} characters");
     }
 }
-/**
- *The algorithm has Linear Time Complexity of O(n) where n is the length of the string.
- *Space Complexity is O(26) as a constant array of size 26 (count lower case alphabets ) is
- *required to store occurrences of a-z.
- */
+
